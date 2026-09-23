@@ -1,0 +1,22 @@
+
+<!DOCTYPE html><html><head><title>AI Lost Civilization</title>
+<style>
+body{background:#0c0a07;color:#e6d3a3;font-family:Georgia;padding:40px}
+.card{max-width:900px;margin:auto;background:#15110d;padding:20px;border-radius:16px;border:1px solid #5a4720}
+button{padding:12px 20px}
+pre{white-space:pre-wrap}
+</style></head><body>
+<div class="card">
+<h1>🏛️ AI Lost Civilization</h1>
+<p>Generate forgotten empires, myths, rulers, and artifacts.</p>
+<button onclick="gen()">Discover Civilization</button>
+<pre id="out">Awaiting discovery...</pre>
+</div>
+<script>
+async function gen(){
+ const r=await fetch('/api/generate',{method:'POST'});
+ const d=await r.json();
+ out.textContent=d.result;
+}
+</script>
+</body></html>
